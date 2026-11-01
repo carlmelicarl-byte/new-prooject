@@ -1,0 +1,16 @@
+{
+  "name": "elimu360-school-suite",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Elimu360 — Kenyan CBC/CBE School Management Suite (Zeraki-style Analytics, Finance & Learning)",
+  "scripts": {
+    "setup": "npm install && cd server && npm install && cd ../client && npm install",
+    "dev": "concurrently -n server,client -c cyan,green \"npm run server\" \"npm run client\"",
+    "server": "cd server && npm start",
+    "client": "cd client && npm run dev",
+    "reset-data": "rm -f server/data/db.json && echo 'Database reset — will reseed on next server start'"
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.0"
+  }
+}
